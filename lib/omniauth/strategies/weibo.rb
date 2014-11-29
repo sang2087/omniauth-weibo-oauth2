@@ -43,7 +43,7 @@ module OmniAuth
         @raw_info ||= access_token.get("/2/users/show.json", :params => {:uid => @uid}).parsed
       end
 
-      def find_image
+      def find_image temp
         raw_info[%w(avatar_hd avatar_large profile_image_url).find { |e| raw_info[e].present? }]
       end
 
